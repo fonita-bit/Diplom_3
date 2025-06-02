@@ -49,9 +49,13 @@ class Locators:
     MODAL_CLOSE_BTN = (By.XPATH, "//button[contains(@class, 'Modal_modal__close')]")
     MODAL_CLOSE = (By.XPATH, "//button[contains(@class, 'Modal_modal__close')]")
     # Восстановление пароля
-    FORGOT_PASSWORD_LINK = (By.LINK_TEXT, "Войти")
+    #FORGOT_PASSWORD_LINK = (By.LINK_TEXT, "Войти")
+    #FORGOT_PASSWORD_EMAIL_INPUT = (By.NAME, "name")
+    #FORGOT_PASSWORD_SUBMIT = (By.XPATH, "//button[text()='Восстановить']")
+    FORGOT_PASSWORD_LINK = (By.XPATH, "//a[@href='/forgot-password' and contains(text(),'Восстановить пароль')]")
     FORGOT_PASSWORD_EMAIL_INPUT = (By.NAME, "name")
     FORGOT_PASSWORD_SUBMIT = (By.XPATH, "//button[text()='Восстановить']")
+
 
     CONSTRUCTOR_BTN = (By.XPATH, '//p[text()="Конструктор"]')
     FEED_BTN = (By.XPATH, '//a[@href="/feed"]')
