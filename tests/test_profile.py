@@ -18,7 +18,7 @@ class TestProfile:
         profile_page = ProfilePage(driver)
         profile_page.go_to_profile()
 
-        assert "/account" in driver.current_url
+        assert "/account" in profile_page.get_current_url()
 
     @allure.title("Go to order history tab in profile")
     def test_go_to_order_history(self, driver):
@@ -29,7 +29,7 @@ class TestProfile:
         profile_page.go_to_profile()
         profile_page.go_to_order_history()
 
-        assert "/account/order-history" in driver.current_url
+        assert "/account/order-history" in profile_page.get_current_url()
 
     @allure.title("Logout from profile")
     def test_logout(self, driver):
@@ -40,4 +40,4 @@ class TestProfile:
         profile_page.go_to_profile()
         profile_page.logout()
 
-        assert driver.current_url == URLs.LOGIN_PAGE
+        assert profile_page.get_current_url() == URLs.LOGIN_PAGE

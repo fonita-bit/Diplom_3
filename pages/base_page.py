@@ -14,6 +14,9 @@ class BasePage:
             EC.element_to_be_clickable(locator)
         ).click()
 
+    def get_current_url(self):
+        return self.driver.current_url
+
     def set_text(self, locator, text):
         WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(locator)

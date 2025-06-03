@@ -15,7 +15,7 @@ class TestForgotPassword:
         login_page = LoginPage(driver)
         login_page.go(URLs.LOGIN_PAGE)
         login_page.go_to_forgot_password_page()
-        assert driver.current_url == URLs.FORGOT_PASSWORD_PAGE
+        assert login_page.get_current_url() == URLs.FORGOT_PASSWORD_PAGE
 
     @allure.title("Restore password: enter email and submit")
     def test_restore_password_submit(self, driver):

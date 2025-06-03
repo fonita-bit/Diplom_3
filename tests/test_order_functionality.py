@@ -13,14 +13,14 @@ class TestOrderFunctionality:
         page = MainPage(driver)
         page.go(URLs.MAIN_PAGE)
         page.click_constructor()
-        assert driver.current_url.endswith("/")
+        assert page.get_current_url().endswith("/")
 
     @allure.title("Переход по клику на 'Лента заказов'")
     def test_feed_tab_click(self, driver):
         page = MainPage(driver)
         page.go(URLs.MAIN_PAGE)
         page.click_feed()
-        assert "/feed" in driver.current_url
+        assert "/feed" in page.get_current_url()
 
     @allure.title("Открытие и закрытие окна ингредиента")
     def test_ingredient_modal_open_close(self, driver):
